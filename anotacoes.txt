@@ -1,0 +1,118 @@
+//git do tutor Fabio Mariano 
+// https://github.com/fabiiomariiano/django
+//instalandomaquina virtual
+
+PS C:\Users\hotki> cd Ultima_PD0323C
+PS C:\Users\hotki\Ultima_PD0323C> cd aula-sobre-django
+PS C:\Users\hotki\Ultima_PD0323C\aula-sobre-django> ls
+PS C:\Users\hotki\Ultima_PD0323C\aula-sobre-django> pip install virtualenv
+
+//criando o ambuente virtual na pasta "aula-sobre-django"
+PS C:\Users\hotki\Ultima_PD0323C\aula-sobre-django> virtualenv python
+
+//ativar o ambiente virtual
+PS C:\Users\hotki\Ultima_PD0323C\aula-sobre-django> cd python
+PS C:\Users\hotki\Ultima_PD0323C\aula-sobre-django\python> dir
+
+
+    Diretório: C:\Users\hotki\Ultima_PD0323C\aula-sobre-django\python
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        25/07/2023     19:49                Lib
+d-----        25/07/2023     19:49                Scripts
+-a----        25/07/2023     19:49             42 .gitignore
+-a----        25/07/2023     19:49            405 pyvenv.cfg
+
+PS C:\Users\hotki\Ultima_PD0323C\aula-sobre-django\python> cd scripts
+PS C:\Users\hotki\Ultima_PD0323C\aula-sobre-django\python\scripts> .\activate
+(python) PS C:\Users\hotki\Ultima_PD0323C\aula-sobre-django\python\scripts>
+
+//para sair
+PS C:\Users\hotki\Ultima_PD0323C\aula-sobre-django\python\scripts> deactivate
+
+//caso tenha que instalar o django
+PS C:\Users\hotki\Ultima_PD0323C\aula-sobre-django> pip install django
+
+//iniciar projeto
+(python) PS C:\Users\hotki\Ultima_PD0323C\aula-sobre-django> django-admin startproject petshop
+(python) PS C:\Users\hotki\Ultima_PD0323C\aula-sobre-django\petshop> ls
+
+
+    Diretório: C:\Users\hotki\Ultima_PD0323C\aula-sobre-django\petshop
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        25/07/2023     20:47                petshop
+-a----        25/07/2023     20:47            685 manage.py
+
+
+(python) PS C:\Users\hotki\Ultima_PD0323C\aula-sobre-django\petshop>
+
+//rodar servidor //para parar Ctrl+C
+(python) PS C:\Users\hotki\Ultima_PD0323C\aula-sobre-django\petshop> python .\manage.py runserver
+
+//criar app
+(python) PS C:\Users\hotki\Ultima_PD0323C\aula-sobre-django\petshop>> python .\manage.py startapp base
+
+//quando pede atualizações
+python manage.py migrate
+
+Git
+
+#criar projeto vazio
+git init
+
+git status
+
+#adicionando arquivos
+git add .
+
+
+Enviando
+
+git commit -m "Atividade Módulo 5- Semana 2"
+git branch -M master
+git remote add origin https://github.com/hotkira/Modulo5-Semana2.git
+git push -u origin master
+
+.\python\scripts\activate
+.\python\scripts\deactivate
+python .\petshop\manage.py runserver
+python .\petshop\manage.py runserver
+
+#instalando bootstrap no django
+	
+#token para os forms
+{% csrf_token %}
+
+#herança
+no arquivo que não é que se repete
+{% extends "base.html" %}
+#bloco que será  do proprio arquivo
+{% block conteudo %}
+todo conteudo exclisivo da pagina
+{% endblock %}
+
+#links
+<a class="link-secondary" href="{% 'inscrever' %}> Inscreva-se</a> #o inscrever ´o nome que você tem que dar no arquivo urls.py
+path('inscrever/', inscrever, name='inscrever'),
+
+Nem todo módulo/app precisa ter modelos (tabelas), mas é comum tê-los. Por isso, para que o Django crie as possíveis tabelas das aplicações acima, precisamos rodar um novo comando, o migrate:
+python .\manage.py migrate
+
+
+O comando makemigrations é mais um comando do Django, Ele é responsável por verificar se o banco dados está compatível com nossos modelos, isto é, identificar se os nossos modelos (classes que herdam de models.Model)
+python .\manage.py makemigrations
+
+
+
+
+
+
+
+
+
+
